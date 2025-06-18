@@ -1,38 +1,56 @@
-Mars Photos
-==================================
+# 🚀 Mars Photos App
 
-Mars Photos app is a demo app that shows actual images of Mars' surface. These images are
-real-life photos from Mars captured by NASA's Mars rovers. The data is stored on a Web server
-as a REST web service.
+A modern Android app built with **Jetpack Compose** that displays photos taken by NASA’s Mars rovers. Developed as part of **Unit 5: Get data from the internet** in the [Android Basics with Compose](https://developer.android.com/courses/android-basics-compose/unit-5) course by Google.
 
-This app demonstrated the use of [Retrofit](https://square.github.io/retrofit/) to make REST requests to the web service, [kotlinx.serialization](https://github.com/Kotlin/kotlinx.serialization) to
-handle the deserialization of the returned JSON to Kotlin data objects, and [Coil](https://coil-kt.github.io/coil/) to load images by URL.
+This app uses Retrofit to fetch data from a RESTful web service, parses it using Kotlinx Serialization, and displays it in a clean, responsive UI built with Compose.
 
-Pre-requisites
---------------
+---
 
-You need to know:
-- How to create Composable functions.
-- How to use architecture components including ViewModel.
-- How to use coroutines for long-running tasks.
-- Familiarity with lazy grid
+## 🌠 Overview
 
-Getting Started
----------------
+- 📸 Displays a gallery of photos sent back by NASA's Mars rovers.
+- 🔗 Fetches data using a **REST API** (represented here by a fake backend).
+- 🔌 Uses **Retrofit** for networking and **Kotlin coroutines** for background operations.
+- 🧱 Structured using **MVVM architecture** with a clean separation of concerns.
+- 🧪 Includes unit tests with coroutine test utilities.
 
-1. [Install Android Studio](https://developer.android.com/studio/install.html), if you don't already
-   have it.
-2. Download the sample.
-3. Import the sample into Android Studio.
-4. Build and run the sample.
+---
 
-## [Build this app through hands-on codelabs in the Android Basics with Compose Course](https://developer.android.com/courses/android-basics-compose/course)
+## 📚 Based on: Android Basics with Compose - Unit 5
 
-### [Get data from the internet](https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet)
-Learn how to use community-developed libraries to connect to a web service to retrieve and display data in your Android Kotlin compose app. 
+**Topics Covered:**
+- RESTful API basics
+- JSON data parsing with Kotlinx Serialization
+- Using Retrofit in Compose apps
+- MVVM + Repository pattern
+- Error handling and testability
 
-### [Add repository and Manual DI](https://developer.android.com/codelabs/basic-android-kotlin-compose-add-repository)
-Learn how to improve the architecture of the app by separating the network calls into a repository.
+---
 
-### [Load and display images from the internet](https://developer.android.com/codelabs/basic-android-kotlin-compose-load-images)
-Use the Coil library to load and display photos from the internet in your Android Compose app. 
+## 🔗 API Reference
+
+The app uses a simulated Mars API, modeled after the real [NASA Mars Rover Photos API](https://api.nasa.gov/).
+
+### Example Endpoint:
+GET /photos
+
+### Sample Response:
+```json
+[
+  {
+    "id": "1",
+    "img_src": "https://mars.nasa.gov/image.jpg"
+  },
+  {
+    "id": "2",
+    "img_src": "https://mars.nasa.gov/image2.jpg"
+  }
+]
+```
+In production, this would correspond to:
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=DEMO_KEY
+
+---
+
+## 📷 App Screenshot
+![WhatsApp Image 2025-06-18 at 16 26 04_2afc4f8f](https://github.com/user-attachments/assets/5bdec684-f8fd-4d12-b488-6cd3bb57850c)
